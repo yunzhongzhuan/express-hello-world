@@ -7,7 +7,7 @@ const app = express()
 app.use(function (req, res, next) {
   //res.set('x-timestamp', Date.now())
   //res.set('x-powered-by', 'cyclic.sh')
-  res.set('req-json',req.toString());
+  res.set('req-json',toString(req));
   //console.log(`[${new Date().toISOString()}] ${req.ip} ${req.method} ${req.path}`);
   next();
 });
