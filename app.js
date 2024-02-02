@@ -7,7 +7,13 @@ const app = express()
 app.use(function (req, res, next) {
   //res.set('x-timestamp', Date.now())
   //res.set('x-powered-by', 'cyclic.sh')
-  res.set('req-json',toString(req));
+
+  // SET HEADERS
+  res.set('Origin-Agent-Cluster','?0');
+  res.set('X-Frame-Options','SAMEORIGIN');
+  res.set('Content-Security-Policy','frame-ancestors *.yunzhongzhuan.com');
+  res.set('Strict-Transport-Security','max-age=0; includeSubDomains');
+  
   console.log(req);
   console.log(toString(req));
   //console.log(`[${new Date().toISOString()}] ${req.ip} ${req.method} ${req.path}`);
